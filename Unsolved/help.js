@@ -6,8 +6,8 @@ var axios = require("axios");
 
 // Parameters we are pulling from CarMD
 // var message = $("#message-text");
-vinNum = process.argv[2]; //$("vin-input");
-mileage = process.argv.slice(3).join(); //0;
+// vinNum = process.argv[2]; //$("vin-input");
+// mileage = process.argv.slice(3).join(); //0;
 // year = 0;
 // make = $("#make-input");
 // model = $("#model-input");
@@ -17,15 +17,15 @@ parts = [{}]; //Array of objects in the parts data array
 // function carMD(vin, miles) {
 // URL for CarMD
 var queryURL =
-  "http://api2.carmd.com/v3.0/maint?vin=" + vinNum + "&mileage=" + mileage;
+//   "http://api2.carmd.com/v3.0/maint?vin=1N4AL3AP7DC291180&mileage=45628";
 // Ajax call 'GET'
 axios
-  .get({
-    url: queryURL,
-    headers: {
+  .get({ "http://api2.carmd.com/v3.0/maint?vin=1N4AL3AP7DC291180&mileage=45628"
+    // url: queryURL,
+    {headers: {
       "Content-Type": "application/json",
-      authorization: "Basic YjEzN2NlZWMtM2E5OS00MjVkLTg3NTktZWQ5Y2Q2NTNmMDg5",
-      "partner-token": "0b515ac66a9246af95901cf07d9a47a1"
+      "authorization": "Basic YjEzN2NlZWMtM2E5OS00MjVkLTg3NTktZWQ5Y2Q2NTNmMDg5",
+      "partner-token": "0b515ac66a9246af95901cf07d9a47a1",
     }
   })
   .then(function(data) {
